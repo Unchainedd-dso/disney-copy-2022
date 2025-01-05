@@ -1,1 +1,0 @@
-{"version":3,"sources":["data:;charset=utf-8,$bgColor:%20red;%0D%0A%0D%0Abody%7B%0D%0A%20%20%20%20background-color:%20$bgColor;%0D%0A%7D"],"names":[],"mappings":"AAEA,KACI,iBAHM","sourcesContent":["$bgColor: red;\r\n\r\nbody{\r\n    background-color: $bgColor;\r\n}"],"file":"../main.css"}
