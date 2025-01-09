@@ -1,0 +1,43 @@
+@use 'variaveis' as  v;
+
+@mixin text($tamanhoFonte:16px){
+    font-size: $tamanhoFonte;
+    line-height: $tamanhoFonte + 10px;
+    color: v.$corTexto;
+}
+
+@mixin title($tamanhoFonte:40px){
+    font-size: $tamanhoFonte;
+    line-height: $tamanhoFonte + 10px;
+    color: v.$corTitulos;
+}
+
+.texto--grande{
+    @include text(18px)
+}
+
+.texto{
+    @include text()
+}
+
+.texto--pequeno{
+    @include text(12px)
+}
+
+.titulo--grande{
+    @include title(44px)
+}
+
+.titulo{
+    @include title()
+}
+
+.titulo--pequeno{
+    @include title(28px)
+}
+
+.link-texto{
+    @include text(18px);
+    color: v.$corTitulos;
+    text-decoration: underline;
+}

@@ -1,6 +1,8 @@
 const gulp = require('gulp')
 const sass = require('gulp-sass')(require('sass'))
 const sourcemaps = require('gulp-sourcemaps')
+// O plugin só funciona com require até a versao 7.1.0
+const imagemin = require('gulp-imagemin');
 
 function compilaSass(){
     return gulp.src('./source/styles/*.scss')
@@ -13,7 +15,15 @@ function compilaSass(){
         .pipe(gulp.dest('./dist/styles'))
 }
 
-exports.default = compilaSass;
+function comprimeImagens(){
+    // Colocar encoding: false faz com que todas as imagens sejam minificadas, em vez de só duas
+    return gulp.src('./source/images/**/*', {encoding:false})
+        .pipe(imagemin())
+        .pipe(gulp.dest('./dist/images'))
+}
+
+exports.compilaSass = compilaSass;
+exports.comprimeImagens = comprimeImagens
 exports.watch = function(){
     gulp.watch('./source/styles/*.scss', gulp.parallel(compilaSass))
 }
