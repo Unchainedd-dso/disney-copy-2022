@@ -1,0 +1,47 @@
+@use '_variaveis' as v;
+
+.banner-shows{
+    padding: 2vw 5.6vw;
+
+    &__tabs{
+        margin-bottom: 44px;
+        display: flex;
+        justify-content: center;
+
+        &__button{
+            color: v.$corTexto;
+            font-size: 20px;
+            border: none;
+            border-bottom: 5px solid transparent;
+            padding-bottom: 5px;
+            background-color: transparent;
+            text-transform: uppercase;
+            margin: 0 1vw;
+            
+            &:hover{
+                cursor: pointer;
+            }
+
+            &--is-active{
+                border-bottom: 5px solid v.$corTexto;
+            }
+        }
+    }
+}
+
+.shows{
+    display: none;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 24px;
+
+    &--is-active{
+        display: grid;
+    }
+}
+
+.shows__item{
+    img{
+        max-width: 100%;
+        border-radius: 4px;
+    }
+}
