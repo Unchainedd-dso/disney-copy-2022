@@ -13,27 +13,51 @@
 }
 
 .texto--grande{
-    @include text(18px)
+    @include text(18px);
+
+    @media screen and (max-width:768px){
+        @include text(15px);
+    }
 }
 
 .texto{
-    @include text()
+    @include text();
+
+    @media screen and (max-width:768px){
+        @include text(14px);
+    }
 }
 
 .texto--pequeno{
-    @include text(12px)
+    @include text(12px);
+
+    @media screen and (max-width:768px){
+        @include text(11px);
+    }
 }
 
 .titulo--grande{
-    @include title(44px)
+    @include title(44px);
+
+    @media screen and (max-width:768px){
+        @include title(28px);
+    }
 }
 
 .titulo{
-    @include title()
+    @include title();
+
+    @media screen and (max-width:768px){
+        @include title(24px);
+    }
 }
 
 .titulo--pequeno{
-    @include title(28px)
+    @include title(28px);
+
+    @media screen and (max-width:768px){
+        @include title(22px);
+    }
 }
 
 .link-texto{

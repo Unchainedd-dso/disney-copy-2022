@@ -6,6 +6,7 @@
 @use 'avaible-devices';
 @use 'faq';
 @use 'footer';
+@use 'header';
 @use 'variaveis' as v;
 @use 'textos' as t;
 
@@ -43,8 +44,38 @@ body{
     margin: 2vw 0 8px;
     color: v.$corTitulos;
     font-size: 18px;
+    text-decoration: none;
+    padding: 8px 14px;
+    letter-spacing: 1px;
+    border: 1px solid v.$corBotao;
 
     &:hover{
         cursor: pointer;
+        background-color: lighten(v.$corBotao, 3%);
+    }
+
+    &--secondary{
+        background-color: #0063e5;
+        color: v.$corTitulos;
+        border-color: #0063e5;
+        &:hover{
+            background-color: lighten(#0063e5, 3%);
+        }
+    }
+
+    &--dark{
+        background-color: v.$corDark;
+        border-color: v.$corTitulos;
+        
+        &:hover{
+            background-color: v.$corDark;
+        }
     }
 }
+
+@media screen and (max-width:768px){
+    body{
+        overflow-x: hidden;
+    }
+}
+    

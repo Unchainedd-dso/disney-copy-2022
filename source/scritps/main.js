@@ -2,9 +2,30 @@ document.addEventListener('DOMContentLoaded', function(){
     // [] faz com que tu possa procurar por um atributo
     const botoes = this.querySelectorAll('[data-tab-button]')
     const faqItems = this.querySelectorAll('.faq__item')
-    console.log(botoes)
-    console.log(faqItems)
     
+    const heroSection = this.querySelector('.hero');
+    const header = this.querySelector('.header')
+    const heroHeight = heroSection.clientHeight;
+
+    // console.log(botoes)
+    // console.log(faqItems)
+    console.log(heroHeight);
+
+    window.addEventListener('scroll', function(){
+        //Captura a altura da página 
+        const posicaoAtual = this.scrollY;
+
+        if (posicaoAtual < heroHeight) {
+            encobreHeader(header);
+            console.log('menor')
+        }
+        else{
+            mostraHeader(header);
+            console.log('maior')
+        }
+    })
+
+    // Seção de atraççoes, configuração das abas
     botoes.forEach(function(botao){
         botao.addEventListener('click', function(b){
             // É necessario acessar o target primeiro, senao fica como indefinido
@@ -21,6 +42,7 @@ document.addEventListener('DOMContentLoaded', function(){
         })
     })
 
+    // seção do FAQ, configutação dos accordions
     faqItems.forEach(function(item){
         item.addEventListener('click', function(i){
             // i.target devolve .faq-question, pois o evento de clique acontece nela
@@ -44,4 +66,12 @@ function apagaBordaBotoes(){
     botoes.forEach(function(botao){
         botao.classList.remove('banner-shows__tabs__button--is-active')
     })
+}
+
+function encobreHeader(header){
+    header.classList.add('header--is-hidden')
+}
+
+function mostraHeader(header){
+    header.classList.remove('header--is-hidden')
 }

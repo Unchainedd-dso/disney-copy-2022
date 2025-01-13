@@ -28,4 +28,20 @@
         margin-bottom: 24px;
     }
 
+    .botao{
+        margin-top: 24px;
+    }
+
+}
+
+@media screen and (max-width: 768px){
+    .plans{
+        &__list{
+            display: block;
+        }
+
+        &__item-img{
+            margin-left: 0 auto 24px;
+        }
+    }
 }

@@ -16,3 +16,14 @@
         }
     }
 }
+
+@media screen and (max-width:768px){
+    .watch-anywhere{
+        display: block;
+
+        &__image{
+            max-width: 100%;
+            width: 100%;
+        }
+    }
+}
