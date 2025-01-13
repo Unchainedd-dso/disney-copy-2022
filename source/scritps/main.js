@@ -1,7 +1,9 @@
 document.addEventListener('DOMContentLoaded', function(){
     // [] faz com que tu possa procurar por um atributo
     const botoes = this.querySelectorAll('[data-tab-button]')
+    const faqItems = this.querySelectorAll('.faq__item')
     console.log(botoes)
+    console.log(faqItems)
     
     botoes.forEach(function(botao){
         botao.addEventListener('click', function(b){
@@ -16,6 +18,15 @@ document.addEventListener('DOMContentLoaded', function(){
             const tab = document.querySelector(`[data-tab-id=${tabNome}]`)
             apagaAbas()
             tab.classList.add('shows--is-active')
+        })
+    })
+
+    faqItems.forEach(function(item){
+        item.addEventListener('click', function(i){
+            // i.target devolve .faq-question, pois o evento de clique acontece nela
+            const faqItem = i.target.parentElement
+            console.log(faqItem)
+            faqItem.classList.toggle('faq__item--is-open')
         })
     })
 })

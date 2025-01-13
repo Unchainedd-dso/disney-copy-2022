@@ -1,0 +1,59 @@
+.faq{
+    padding: 5.6vw;
+
+    .titulo{
+        text-align: center;
+        margin-bottom: 24px;
+    }
+
+    &__item{
+        background-color: #13151d;
+        margin-bottom: 16px;
+
+        &--is-open{
+            .faq__answer{
+                height: auto;
+                padding-bottom: 24px;
+            }
+
+            .faq__question::after{
+                content: '-';
+                transform: rotate(180deg);
+            }
+        }
+    }
+
+    &__question{
+        color: white;
+        font-size: 20px;
+        padding: 24px;
+        cursor: pointer;
+        position: relative;
+
+        // Vai aparecer logo depois do elemento existente em question
+        &::after{
+            content: '+';
+            position: absolute;
+            top:0;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            // alinha em relaçao ao texto, enquanto tudo acima alinha em relação ao container question
+            // margin: auto 0; 
+            right: 24px;
+            font-size: 40px;
+            transition: transform 0.3s ease;
+        }
+    }
+
+    &__answer{
+        padding: 0 24px;
+        height: 0;
+        overflow: hidden;
+        // Se não colocar a vírgula, a animação não fica suave
+        transition: height, 0.3s ease;
+        // alternativa
+        // transition: max-height 0.3s ease, padding 0.3s ease;
+    }
+
+}
