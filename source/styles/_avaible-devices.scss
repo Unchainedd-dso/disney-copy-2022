@@ -1,0 +1,28 @@
+.avaible-devices{
+    padding: 5.6vw;
+    text-align: center;
+
+    .titulo{
+        margin-bottom: 24px;
+    }
+
+    &__list{
+        display: grid;
+        // se usar 25% em vez de 1fr (fração), ele vaza por causa do gap
+        grid-template-columns: repeat(4,1fr);
+        gap: 24px;
+
+        .titulo--pequeno{
+            margin-top: 20px;
+            margin-bottom: 24px;
+        }
+
+        ul{
+            list-style: none;
+        }
+    }
+
+    &__image{
+        width: 100%;
+    }
+}

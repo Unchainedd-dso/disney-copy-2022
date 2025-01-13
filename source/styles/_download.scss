@@ -1,0 +1,25 @@
+.download{
+    display: flex;
+    padding: 5.6vw;
+    min-height: 60vw;
+    // Não precisa nesse caso, mas pra entender a lógica melhor coloquei
+    position: relative;
+    background-image: url(../images/fundo_rei_leao.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    &__text-container{
+        align-self: center;
+        padding: 0 2vw;
+        position: absolute;
+        width: calc(50% - 5.6vw);
+        // devido a posição dele ser absoluta, o padding dele não leva em conta o do container .download
+        // O correto seria 2vw + 5.6vw = 7.6vw
+        // padding-right: 5.6vw;
+        left: 50%;
+
+        h2{
+            margin-bottom: 24px;
+        }
+    }
+}
