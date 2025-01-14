@@ -3,6 +3,7 @@ const sass = require('gulp-sass')(require('sass'))
 const sourcemaps = require('gulp-sourcemaps')
 // O plugin só funciona com require até a versao 7.1.0
 const imagemin = require('gulp-imagemin');
+const uglify = require('gulp-uglify')
 
 function compilaSass(){
     return gulp.src('./source/styles/*.scss')
@@ -22,8 +23,17 @@ function comprimeImagens(){
         .pipe(gulp.dest('./dist/images'))
 }
 
+function comprimeJs(){
+    return gulp.src('./source/scripts/*.js')
+        .pipe(uglify())
+        .pipe(gulp.dest('./dist/scripts'))
+}
+
 exports.compilaSass = compilaSass;
-exports.comprimeImagens = comprimeImagens
+exports.comprimeImagens = comprimeImagens;
+exports.comprimeJs = comprimeJs;
 exports.watch = function(){
     gulp.watch('./source/styles/*.scss', gulp.parallel(compilaSass))
+    gulp.watch('./source/scripts/*.js', gulp.parallel(comprimeJs))
 }
+exports.default = gulp.parallel(compilaSass, comprimeJs)
