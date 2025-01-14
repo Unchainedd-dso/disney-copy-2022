@@ -36,4 +36,4 @@ exports.watch = function(){
     gulp.watch('./source/styles/*.scss', gulp.parallel(compilaSass))
     gulp.watch('./source/scripts/*.js', gulp.parallel(comprimeJs))
 }
-exports.default = gulp.parallel(compilaSass, comprimeJs)
+exports.default = gulp.parallel(compilaSass, comprimeJs, comprimeImagens)
