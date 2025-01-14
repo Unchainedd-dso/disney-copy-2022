@@ -71,3 +71,23 @@
     }
     
 }
+
+@media screen and (min-width:769px) and (max-width: 1023px) {
+    .hero{
+        background-image: url(../images/hero_tablet.jpg);
+        padding-top: calc(50vw + 35px);
+        background-size: contain;
+        background-repeat: no-repeat;
+        margin-top: -80px;
+
+        &__conteudo{
+            margin: 0 auto;
+        }
+        
+        &__logo{
+            max-width: 280px;
+            margin: 0 auto 38px;
+        }
+    }
+
+}

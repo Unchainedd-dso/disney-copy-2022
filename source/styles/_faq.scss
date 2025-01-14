@@ -57,3 +57,25 @@
     }
 
 }
+
+@media screen and (max-width: 768px){
+    .faq{
+        &__question{
+            font-size: 16px;
+            padding-right: 60px;
+
+            &::after{
+                font-size: 35px;
+                
+            }
+        }
+    }
+}
+
+@media screen and (min-width:769px) and (max-width: 1023px) {
+    .faq{
+        &__question{
+            padding-right: 60px;
+        }
+    }
+}
